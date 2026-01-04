@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment -LIU university</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .enrollment-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(37, 99, 235, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .enrollment-info {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .enrollment-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .enrollment-info p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .success-message {
+            display: none;
+            background: #d1fae5;
+            border: 2px solid var(--success-color);
+            color: #065f46;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .error-message {
+            color: #dc2626;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .back-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link a:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .enrollment-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.6rem;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body class="no-flash">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="brand">
+                    <img src="https://keystoneacademic-res.cloudinary.com/image/upload/c_pad,w_640,h_304/dpr_auto/f_auto/q_auto/v1/element/10/108199_thumb.jpg" alt="LIU logo" class="site-logo">
+                    <span class="brand-text" data-i18n="brand">LIU university</span>
+                </a>
+            </div>
+            <button id="langToggle" class="lang-toggle fixed-left" aria-label="Change language">
+                <svg width="24" height="16" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <rect width="12" height="24" x="0" fill="#0055A4" />
+                    <rect width="12" height="24" x="12" fill="#FFFFFF" />
+                    <rect width="12" height="24" x="24" fill="#EF4135" />
+                </svg>
+                <span class="lang-label">FR</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="professors.html">Professors</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h1>Course Enrollment</h1>
+            <p>Join our courses and start your learning journey</p>
+        </section>
+
+        <section class="content-section">
+            <div class="enrollment-container">
+                <div id="successMessage" class="success-message">
+                    ✅ Enrollment submitted successfully! We will contact you soon with confirmation details.
+                </div>
+
+                <div class="enrollment-info">
+                    <h3 data-i18n="enroll.title">📌 Enrollment Information</h3>
+                    <p data-i18n="enroll.subtitle">Please fill out the form below to enroll in a course. All fields are required. You will receive a confirmation email within 24 hours.</p>
+                </div>
+
+                <form id="enrollmentForm">
+                    <div class="form-group">
+                        <label for="fullName" data-i18n="enroll.fullName.label">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required data-i18n-placeholder="true" data-i18n="enroll.fullName.label" placeholder="Full Name *">
+                        <span class="error-message" id="nameError" data-i18n="">Please enter your full name</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" data-i18n="enroll.email.label">Email Address *</label>
+                        <input type="email" id="email" name="email" required data-i18n-placeholder="true" data-i18n="enroll.email.label" placeholder="Email Address *">
+                        <span class="error-message" id="emailError">Please enter a valid email address</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" data-i18n="enroll.phone.label">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required data-i18n-placeholder="true" data-i18n="enroll.phone.label">
+                        <span class="error-message" id="phoneError">Please enter a valid phone number</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course" data-i18n="enroll.course.label">Select Course *</label>
+                        <select id="course" name="course" required>
+                            <option value="">-- Choose a Course --</option>
+                            <option value="CS-101">Web Development (CS-101)</option>
+                            <option value="CS-202">Artificial Intelligence (CS-202)</option>
+                            <option value="CS-203">Data Science (CS-203)</option>
+                            <option value="MATH-301">Advanced Mathematics (MATH-301)</option>
+                            <option value="ENG-401">backend programing (cs-200) </option>
+                        </select>
+                        <span class="error-message" id="courseError">Please select a course</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="education" data-i18n="enroll.education.label">Current Education Level *</label>
+                        <select id="education" name="education" required>
+                            <option value="">-- Choose Level --</option>
+                            <option value="Bachelor">Bachelor's Degree</option>
+                            <option value="Master">Master's Degree</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="error-message" id="educationError">Please select your education level</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience" data-i18n="enroll.experience.label">Previous Experience (Optional)</label>
+                        <textarea id="experience" name="experience" placeholder="Tell us about your relevant experience..." data-i18n-placeholder="true" data-i18n="enroll.experience.label"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" data-i18n="enroll.message.label">Why do you want to enroll? *</label>
+                        <textarea id="message" name="message" placeholder="Share your motivation for taking this course..." required data-i18n-placeholder="true" data-i18n="enroll.message.label"></textarea>
+                        <span class="error-message" id="messageError">Please tell us why you want to enroll</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn" data-i18n="enroll.submit">Submit Enrollment</button>
+                </form>
+
+                <div class="back-link">
+                    <a href="courses.html">← Back to Courses</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   
+
+    <script>
+        const form = document.getElementById('enrollmentForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+           
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            
+            let isValid = true;
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const course = document.getElementById('course').value;
+            const education = document.getElementById('education').value;
+            const message = document.getElementById('message').value.trim();
+
+            if (!fullName) {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!email || !email.includes('@')) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!phone) {
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!course) {
+                document.getElementById('courseError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!education) {
+                document.getElementById('educationError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!message) {
+                document.getElementById('messageError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                
+                successMessage.style.display = 'block';
+                
+                
+                console.log('Enrollment Data:', {
+                    fullName,
+                    email,
+                    phone,
+                    course,
+                    education,
+                    experience: document.getElementById('experience').value,
+                    message
+                });
+
+                
+                form.reset();
+
+                
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+
+                
+                window.scrollTo(0, 0);
+            }
+        });
+
+       
+        document.getElementById('email').addEventListener('blur', function() {
+            if (this.value && !this.value.includes('@')) {
+                document.getElementById('emailError').style.display = 'block';
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+        });
+    </script>
+
+    <!-- Chat widget -->
+    <script src="js/lang.js"></script>
+    <button class="chat-button" id="openChat" aria-label="Open chat">💬</button>
+    <div class="chat-modal" id="chatModal" aria-hidden="true">
+        <div class="chat-panel">
+            <button class="chat-close" id="closeChat" aria-label="Close chat">×</button>
+                <h3 data-i18n="chat.title">Contact LIU University</h3>
+            <form id="chatForm">
+                <div class="form-group">
+                    <label for="chatName">Full name</label>
+                    <input id="chatName" name="chatName" required>
+                </div>
+                <div class="form-group">
+                    <label for="chatEmail">Email</label>
+                    <input id="chatEmail" name="chatEmail" type="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="chatMessage">Message</label>
+                    <textarea id="chatMessage" name="chatMessage" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" data-i18n="chat.send">Send Message</button>
+                <div id="chatStatus" style="display:none;margin-top:0.5rem;"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const openChat = document.getElementById('openChat');
+            const chatModal = document.getElementById('chatModal');
+            const closeChat = document.getElementById('closeChat');
+            const chatForm = document.getElementById('chatForm');
+            const chatStatus = document.getElementById('chatStatus');
+            if(!openChat || !chatModal) return;
+            openChat.addEventListener('click', () => {
+                chatModal.style.display = 'flex';
+                chatModal.setAttribute('aria-hidden','false');
+                document.getElementById('chatName').focus();
+            });
+            closeChat.addEventListener('click', () => {
+                chatModal.style.display = 'none';
+                chatModal.setAttribute('aria-hidden','true');
+            });
+            window.addEventListener('click', (e) => {
+                if (e.target === chatModal) {
+                    chatModal.style.display = 'none';
+                    chatModal.setAttribute('aria-hidden','true');
+                }
+            });
+
+            chatForm.addEventListener('submit', function(e){
+                e.preventDefault();
+                chatStatus.style.display = 'none';
+                const name = document.getElementById('chatName').value.trim();
+                const email = document.getElementById('chatEmail').value.trim();
+                const message = document.getElementById('chatMessage').value.trim();
+                if(!name || !email || !message){
+                    chatStatus.style.display = 'block';
+                    chatStatus.style.color = '#dc2626';
+                    chatStatus.textContent = 'Please fill all fields.';
+                    return;
+                }
+                const to = 'admissions@liu.edu';
+                const subject = encodeURIComponent('Website message from ' + name);
+                const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+                window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+                chatStatus.style.display = 'block';
+                chatStatus.style.color = '#065f46';
+                chatStatus.textContent = 'Opened your email client to send the message. If that did not work, email admissions@liu.edu';
+                chatForm.reset();
+                setTimeout(()=>{ chatModal.style.display='none'; chatModal.setAttribute('aria-hidden','true'); }, 1200);
+            });
+        })();
+    </script>
+     <footer>
+        <p data-i18n="footer.copy" style="text-align:center;padding:1.5rem 0;color:#fff;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));margin-top:3rem;">&copy; 2025 LIU university</p>
+    </footer>
+</body>
+</html>

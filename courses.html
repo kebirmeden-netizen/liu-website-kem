@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - School Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="no-flash">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="brand">
+                    <img src="https://keystoneacademic-res.cloudinary.com/image/upload/c_pad,w_640,h_304/dpr_auto/f_auto/q_auto/v1/element/10/108199_thumb.jpg" alt="LIU logo" class="site-logo">
+                    <span class="brand-text" data-i18n="brand">LIU university</span>
+                </a>
+            </div>
+            <button id="langToggle" class="lang-toggle fixed-left" aria-label="Change language">
+                <svg width="24" height="16" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <rect width="12" height="24" x="0" fill="#0055A4" />
+                    <rect width="12" height="24" x="12" fill="#FFFFFF" />
+                    <rect width="12" height="24" x="24" fill="#EF4135" />
+                </svg>
+                <span class="lang-label">FR</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="students.html" data-i18n="nav.students">Students</a></li>
+                <li><a href="professors.html" data-i18n="nav.professors">Professors</a></li>
+                <li><a href="courses.html" class="active" data-i18n="nav.courses">Courses</a></li>
+                <li><a href="content.html" data-i18n="nav.content">Content</a></li>
+                <li><a href="schedule.html" data-i18n="nav.schedule">Schedule</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h1 data-i18n="page.courses.h1">Our Courses</h1>
+            <p data-i18n="page.courses.p">Explore our comprehensive course offerings</p>
+        </section>
+
+        <section class="content-section">
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon">💻</div>
+                    <h3 data-i18n="course.cs101.title">Web Development</h3>
+                    <p class="course-code">CS-101</p>
+                    <p class="course-instructor">Instructor: Dr. EL Benani</p>
+                    <p class="course-description" data-i18n="course.cs101.desc">Learn HTML, CSS, JavaScript, and modern web frameworks.</p>
+                    <div class="course-info">
+                        <span>📅 4 Months</span>
+                        <span>👥 45 Students</span>
+                    </div>
+                    <a href="enroll.html" class="enroll-btn">Enroll Now</a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon">🤖</div>
+                    <h3 data-i18n="course.cs202.title">Artificial Intelligence</h3>
+                    <p class="course-code">CS-202</p>
+                    <p class="course-instructor">Instructor: Dr. Dillahi</p>
+                    <p class="course-description" data-i18n="course.cs202.desc">Master machine learning algorithms and AI applications.</p>
+                    <div class="course-info">
+                        <span>📅 6 Months</span>
+                        <span>👥 30 Students</span>
+                    </div>
+                    <a href="enroll.html" class="enroll-btn">Enroll Now</a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon">📊</div>
+                    <h3 data-i18n="course.cs203.title">Data Science</h3>
+                    <p class="course-code">CS-203</p>
+                    <p class="course-instructor">Instructor: dr el naji</p>
+                    <p class="course-description" data-i18n="course.cs203.desc">Analyze data and create insights with Python and R.</p>
+                    <div class="course-info">
+                        <span>📅 5 Months</span>
+                        <span>👥 40 Students</span>
+                    </div>
+                    <a href="enroll.html" class="enroll-btn">Enroll Now</a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon">📐</div>
+                    <h3 data-i18n="course.math301.title">Advanced Mathematics</h3>
+                    <p class="course-code">MATH-301</p>
+                    <p class="course-instructor">Instructor: dr. Ndongo </p>
+                    <p class="course-description" data-i18n="course.math301.desc">Explore calculus, algebra, and mathematical analysis.</p>
+                    <div class="course-info">
+                        <span>📅 4 Months</span>
+                        <span>👥 50 Students</span>
+                    </div>
+                    <a href="enroll.html" class="enroll-btn">Enroll Now</a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon">💻</div>
+                    <h3 data-i18n="course.backend.title">backend programing</h3>
+                    <p class="course-code">pr-401</p>
+                    <p class="course-instructor">Instructor: Dr. El tounoussiye </p>
+                    <p class="course-description" data-i18n="course.backend.desc">Learn the crucial languagies for programing</p>
+                    <div class="course-info">
+                        <span>📅 6 Months</span>
+                        <span>👥 35 Students</span>
+                    </div>
+                    <a href="enroll.html" class="enroll-btn">Enroll Now</a>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copy" style="text-align:center;padding:1.5rem 0;color:#fff;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));margin-top:3rem;">&copy; 2025 LIU university</p>
+    </footer>
+
+    <!-- Chat widget -->
+    <script src="js/lang.js"></script>
+    <button class="chat-button" id="openChat" aria-label="Open chat">💬</button>
+    <div class="chat-modal" id="chatModal" aria-hidden="true">
+        <div class="chat-panel">
+            <button class="chat-close" id="closeChat" aria-label="Close chat">×</button>
+            <h3 data-i18n="chat.title">Contact LIU University</h3>
+            <form id="chatForm">
+                <div class="form-group">
+                    <label for="chatName">Full name</label>
+                    <input id="chatName" name="chatName" required>
+                </div>
+                <div class="form-group">
+                    <label for="chatEmail">Email</label>
+                    <input id="chatEmail" name="chatEmail" type="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="chatMessage">Message</label>
+                    <textarea id="chatMessage" name="chatMessage" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" data-i18n="chat.send">Send Message</button>
+                <div id="chatStatus" style="display:none;margin-top:0.5rem;"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const openChat = document.getElementById('openChat');
+            const chatModal = document.getElementById('chatModal');
+            const closeChat = document.getElementById('closeChat');
+            const chatForm = document.getElementById('chatForm');
+            const chatStatus = document.getElementById('chatStatus');
+            if(!openChat || !chatModal) return;
+            openChat.addEventListener('click', () => {
+                chatModal.style.display = 'flex';
+                chatModal.setAttribute('aria-hidden','false');
+                document.getElementById('chatName').focus();
+            });
+            closeChat.addEventListener('click', () => {
+                chatModal.style.display = 'none';
+                chatModal.setAttribute('aria-hidden','true');
+            });
+            window.addEventListener('click', (e) => {
+                if (e.target === chatModal) {
+                    chatModal.style.display = 'none';
+                    chatModal.setAttribute('aria-hidden','true');
+                }
+            });
+
+            chatForm.addEventListener('submit', function(e){
+                e.preventDefault();
+                chatStatus.style.display = 'none';
+                const name = document.getElementById('chatName').value.trim();
+                const email = document.getElementById('chatEmail').value.trim();
+                const message = document.getElementById('chatMessage').value.trim();
+                if(!name || !email || !message){
+                    chatStatus.style.display = 'block';
+                    chatStatus.style.color = '#dc2626';
+                    chatStatus.textContent = 'Please fill all fields.';
+                    return;
+                }
+                const to = 'admissions@liu.edu';
+                const subject = encodeURIComponent('Website message from ' + name);
+                const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+                window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+                chatStatus.style.display = 'block';
+                chatStatus.style.color = '#065f46';
+                chatStatus.textContent = 'Opened your email client to send the message. If that did not work, email admissions@liu.edu';
+                chatForm.reset();
+                setTimeout(()=>{ chatModal.style.display='none'; chatModal.setAttribute('aria-hidden','true'); }, 1200);
+            });
+        })();
+    </script>
+</body>
+</html>

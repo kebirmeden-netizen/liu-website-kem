@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - LIU university</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="no-flash">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="brand">
+                    <img src="https://keystoneacademic-res.cloudinary.com/image/upload/c_pad,w_640,h_304/dpr_auto/f_auto/q_auto/v1/element/10/108199_thumb.jpg" alt="LIU logo" class="site-logo">
+                    <span class="brand-text" data-i18n="brand">LIU university</span>
+                </a>
+            </div>
+            <button id="langToggle" class="lang-toggle fixed-left" aria-label="Change language">
+                <svg width="24" height="16" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <rect width="12" height="24" x="0" fill="#0055A4" />
+                    <rect width="12" height="24" x="12" fill="#FFFFFF" />
+                    <rect width="12" height="24" x="24" fill="#EF4135" />
+                </svg>
+                <span class="lang-label">FR</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="students.html" data-i18n="nav.students">Students</a></li>
+                <li><a href="professors.html" data-i18n="nav.professors">Professors</a></li>
+                <li><a href="courses.html" data-i18n="nav.courses">Courses</a></li>
+                <li><a href="content.html" data-i18n="nav.content">Content</a></li>
+                <li><a href="schedule.html" class="active" data-i18n="nav.schedule">Schedule</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="max-width:900px;margin:3rem auto;padding:0 1rem;">
+        <section class="page-header">
+            <div class="page-header-left">
+                <h1 data-i18n="page.schedule.h1">Schedule</h1>
+                <p>Official class schedule and important dates</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="about" style="text-align:center;">
+                <h2 data-i18n="important.title">Important</h2>
+                <p data-i18n="page.schedule.notice" style="font-size:1.1rem;">You must be a current student at LIU university to access the full schedule and register for classes.</p>
+                <p data-i18n="page.schedule.enrollPrompt">If you are not yet a student, please enroll first.</p>
+                <a href="enroll.html" class="enroll-btn" style="margin-top:1rem;display:inline-block;" data-i18n="course.enroll">Enroll Now</a>
+            </div>
+
+            <div style="margin-top:2rem;">
+                <h3>Preview Schedule (for students)</h3>
+                <table style="width:100%;border-collapse:collapse;margin-top:0.75rem;">
+                    <thead>
+                        <tr style="background:var(--light-bg);">
+                            <th data-i18n="table.course" style="text-align:left;padding:0.75rem;border-bottom:1px solid var(--border-color);">Course</th>
+                            <th data-i18n="table.day" style="text-align:left;padding:0.75rem;border-bottom:1px solid var(--border-color);">Day</th>
+                            <th data-i18n="table.time" style="text-align:left;padding:0.75rem;border-bottom:1px solid var(--border-color);">Time</th>
+                            <th data-i18n="table.instructor" style="text-align:left;padding:0.75rem;border-bottom:1px solid var(--border-color);">Instructor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">Web Development (CS-101)</td>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">Mon, Wed</td>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">10:00 - 11:30</td>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">Dr. EL Benani</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">Artificial Intelligence (CS-202)</td>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">Tue, Thu</td>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">16:00 - 15:30</td>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">Dr. Dillahi</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">Data Science (CS-203)</td>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">Tue, Thu</td>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">08:00 - 09:30</td>
+                            <td style="padding:0.6rem;border-bottom:1px solid var(--border-color);">Dr. EL Naji</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copy" style="text-align:center;padding:1.5rem 0;color:#fff;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));margin-top:3rem;">&copy; 2025 LIU university</p>
+    </footer>
+
+    <script src="js/lang.js"></script>
+</body>
+</html>

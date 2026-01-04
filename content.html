@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content - School Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="no-flash">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="brand">
+                    <img src="https://keystoneacademic-res.cloudinary.com/image/upload/c_pad,w_640,h_304/dpr_auto/f_auto/q_auto/v1/element/10/108199_thumb.jpg" alt="LIU logo" class="site-logo">
+                    <span class="brand-text" data-i18n="brand">LIU university</span>
+                </a>
+            </div>
+            <button id="langToggle" class="lang-toggle fixed-left" aria-label="Change language">
+                <svg width="24" height="16" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <rect width="12" height="24" x="0" fill="#0055A4" />
+                    <rect width="12" height="24" x="12" fill="#FFFFFF" />
+                    <rect width="12" height="24" x="24" fill="#EF4135" />
+                </svg>
+                <span class="lang-label">FR</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="students.html" data-i18n="nav.students">Students</a></li>
+                <li><a href="professors.html" data-i18n="nav.professors">Professors</a></li>
+                <li><a href="courses.html" data-i18n="nav.courses">Courses</a></li>
+                <li><a href="content.html" class="active" data-i18n="nav.content">Content</a></li>
+                <li><a href="schedule.html" data-i18n="nav.schedule">Schedule</a></li>
+            </ul>
+        </div>
+    </nav>
+
+                                    <main>
+        <section class="page-header">
+            <h1 data-i18n="page.content.h1">Educational Content</h1>
+            <p>Access our library of learning resources</p>
+        </section>
+
+        <section class="content-section">
+            <div class="resources-container">
+                <div class="resource-category">
+                    <h2 data-i18n="content.lectureNotes">📚 Lecture Notes</h2>
+                    <div class="resource-items">
+                        <div class="resource-item">
+                            <h4 data-i18n="content.note1.title">Introduction to Web Development</h4>
+                            <p data-i18n="content.note1.desc">Complete lecture notes on HTML, CSS, and JavaScript fundamentals.</p>
+                            <a href="https://github.com/drBenanyMM/SiteWebDynamique" class="download-btn" data-i18n="content.download">Download PDF</a>
+                        </div>
+                        <div class="resource-item">
+                            <h4 data-i18n="content.note2.title">Advanced Machine Learning</h4>
+                            <p data-i18n="content.note2.desc">In-depth notes on neural networks and deep learning concepts.</p>
+                            <a href="https://www.ai.rug.nl/minds/uploads/LN_ML_Fall11.pdf" class="download-btn" data-i18n="content.download">Download PDF</a>
+                        </div>
+                        <div class="resource-item">
+                            <h4 data-i18n="content.note3.title">Calculus and Analysis</h4>
+                            <p data-i18n="content.note3.desc">Comprehensive mathematical theory and problem-solving techniques.</p>
+                            <a href="https://www.astrosen.unam.mx/~aceves/Metodos/ebooks/courant_john1.pdf" class="download-btn" data-i18n="content.download">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-category">
+                    <h2 data-i18n="content.videos">🎥 Video Tutorials</h2>
+                    <div class="resource-items">
+                        <div class="resource-item">
+                            <h4 data-i18n="content.video1.title">introduction to c++</h4>
+                            <p data-i18n="content.video1.desc">short video on the basics of c++ </p>
+                            <span class="resource-duration">⏱️ 10 min</span>
+                            <a href="https://www.youtube.com/watch?v=s0g4ty29Xgg" class="download-btn" data-i18n="content.download">Watch Now</a>
+                        </div>
+                        <div class="resource-item">
+                            <h4 data-i18n="content.video2.title">html and css</h4>
+                            <p data-i18n="content.video2.desc">all you need to now about web devellopment </p>
+                            <span class="resource-duration">⏱️ 6 hours</span>
+                            <a href="https://www.youtube.com/watch?v=G3e-cpL7ofc" class="download-btn" data-i18n="content.download">Watch Now</a>
+                        </div>
+                        <div class="resource-item">
+                            <h4 data-i18n="content.video3.title">discret mathematique</h4>
+                            <p data-i18n="content.video3.desc">full course on discret mathematique </p>
+                            <span class="resource-duration">⏱️ 8 hours</span>
+                            <a href="https://www.youtube.com/watch?v=rdXw7Ps9vxc&list=PLHXZ9OQGMqxersk8fUxiUMSIx0DBqsKZS" class="download-btn" data-i18n="content.download">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-category">
+                    <h2 data-i18n="content.assignments">📝 Assignments & Exercises</h2>
+                    <div class="resource-items">
+                        <div class="resource-item">
+                            <h4 data-i18n="content.assign1.title">Web Development Project 1</h4>
+                            <p data-i18n="content.assign1.desc">a collection of html and css projects for.</p>
+                            <span class="resource-difficulty">Difficulty: Intermediate</span>
+                            <a href="https://www.geeksforgeeks.org/css/top-10-projects-for-beginners-to-practice-html-and-css-skills/" class="download-btn" data-i18n="content.download">Start Assignment</a>
+                        </div>
+                        <div class="resource-item">
+                            <h4 data-i18n="content.assign2.title">Machine Learning Exercise Set</h4>
+                            <p data-i18n="content.assign2.desc">Hands-on exercises with datasets and coding challenges.</p>
+                            <span class="resource-difficulty">Difficulty: Advanced</span>
+                            <a href="https://ufal.mff.cuni.cz/~holub/2019/docs/ML_Collection.2019-04-15.pdf" class="download-btn" data-i18n="content.download">Start Assignment</a>
+                        </div>
+                        <div class="resource-item">
+                            <h4 data-i18n="content.assign3.title">Mathematics Problem Bank</h4>
+                            <p data-i18n="content.assign3.desc">300+ problems with solutions covering all calculus topics.</p>
+                            <span class="resource-difficulty">Difficulty: Intermediate</span>
+                            <a href="https://web.pdx.edu/~erdman/CALCULUS/CALCULUS_pdf.pdf" class="download-btn" data-i18n="content.download">Start Assignment</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-category">
+                    <h2 data-i18n="content.textbooks">📖 Textbooks & References</h2>
+                    <div class="resource-items">
+                        <div class="resource-item">
+                            <h4 data-i18n="content.book1.title">"Web Design and Development Fundamentals"</h4>
+                            <p data-i18n="content.book1.desc">Essential reference for modern web development practices.</p>
+                            <span class="resource-author">Author: Connolly & Hoar</span>
+                            <a href="https://api.pageplace.de/preview/DT0400.9781292075556_A24590354/preview-9781292075556_A24590354.pdf" class="download-btn" data-i18n="content.download">Access eBook</a>
+                        </div>
+                        <div class="resource-item">
+                            <h4 data-i18n="content.book2.title">"Computer Networking"</h4>
+                            <p data-i18n="content.book2.desc">Introduction on computer networking concepts.</p>
+                            <span class="resource-author">Author: Keith W. Ross</span>
+                            <a href="https://www.cs.sjtu.edu.cn/~linghe.kong/CS339/Download/ComputerNetworking.pdf" class="download-btn" data-i18n="content.download">Access eBook</a>
+                        </div>
+                        <div class="resource-item">
+                            <h4 data-i18n="content.book3.title">"The Data Science Handbook"</h4>
+                            <p data-i18n="content.book3.desc">Complete resource for data analysis and visualization techniques.</p>
+                            <span class="resource-author">Author: Prof. Rachel Brown</span>
+                            <a href="https://github.com/kanishkamisra/Data-Science-Books/blob/master/The%20Data%20Science%20Handbook.pdf" class="download-btn" data-i18n="content.download">Access eBook</a>
+                        </div>
+                    </div>
+                </div>
+
+               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </main>
+
+    <footer>
+         <p data-i18n="footer.copy" style="text-align:center;padding:1.5rem 0;color:#fff;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));margin-top:3rem;">&copy; 2025 LIU university</p>
+    </footer>
+
+    <!-- Chat widget -->
+    <script src="js/lang.js"></script>
+    <button class="chat-button" id="openChat" aria-label="Open chat">💬</button>
+    <div class="chat-modal" id="chatModal" aria-hidden="true">
+        <div class="chat-panel">
+            <button class="chat-close" id="closeChat" aria-label="Close chat">×</button>
+            <h3 data-i18n="chat.title">Contact LIU University</h3>
+            <form id="chatForm">
+                <div class="form-group">
+                    <label for="chatName">Full name</label>
+                    <input id="chatName" name="chatName" required>
+                </div>
+                <div class="form-group">
+                    <label for="chatEmail">Email</label>
+                    <input id="chatEmail" name="chatEmail" type="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="chatMessage">Message</label>
+                    <textarea id="chatMessage" name="chatMessage" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" data-i18n="chat.send">Send Message</button>
+                <div id="chatStatus" style="display:none;margin-top:0.5rem;"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const openChat = document.getElementById('openChat');
+            const chatModal = document.getElementById('chatModal');
+            const closeChat = document.getElementById('closeChat');
+            const chatForm = document.getElementById('chatForm');
+            const chatStatus = document.getElementById('chatStatus');
+            if(!openChat || !chatModal) return;
+            openChat.addEventListener('click', () => {
+                chatModal.style.display = 'flex';
+                chatModal.setAttribute('aria-hidden','false');
+                document.getElementById('chatName').focus();
+            });
+            closeChat.addEventListener('click', () => {
+                chatModal.style.display = 'none';
+                chatModal.setAttribute('aria-hidden','true');
+            });
+            window.addEventListener('click', (e) => {
+                if (e.target === chatModal) {
+                    chatModal.style.display = 'none';
+                    chatModal.setAttribute('aria-hidden','true');
+                }
+            });
+
+            chatForm.addEventListener('submit', function(e){
+                e.preventDefault();
+                chatStatus.style.display = 'none';
+                const name = document.getElementById('chatName').value.trim();
+                const email = document.getElementById('chatEmail').value.trim();
+                const message = document.getElementById('chatMessage').value.trim();
+                if(!name || !email || !message){
+                    chatStatus.style.display = 'block';
+                    chatStatus.style.color = '#dc2626';
+                    chatStatus.textContent = 'Please fill all fields.';
+                    return;
+                }
+                const to = 'admissions@liu.edu';
+                const subject = encodeURIComponent('Website message from ' + name);
+                const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+                window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+                chatStatus.style.display = 'block';
+                chatStatus.style.color = '#065f46';
+                chatStatus.textContent = 'Opened your email client to send the message. If that did not work, email admissions@liu.edu';
+                chatForm.reset();
+                setTimeout(()=>{ chatModal.style.display='none'; chatModal.setAttribute('aria-hidden','true'); }, 1200);
+            });
+        })();
+    </script>
+</body>
+
+</html>

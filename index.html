@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - School Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="no-flash">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="brand">
+                    <img src="https://keystoneacademic-res.cloudinary.com/image/upload/c_pad,w_640,h_304/dpr_auto/f_auto/q_auto/v1/element/10/108199_thumb.jpg" alt="LIU logo" class="site-logo">
+                    <span class="brand-text" data-i18n="brand">LIU university</span>
+                </a>
+            </div>
+            <button id="langToggle" class="lang-toggle fixed-left" aria-label="Change language">
+                <svg width="24" height="16" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <rect width="12" height="24" x="0" fill="#0055A4" />
+                    <rect width="12" height="24" x="12" fill="#FFFFFF" />
+                    <rect width="12" height="24" x="24" fill="#EF4135" />
+                </svg>
+                <span class="lang-label">FR</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+                <li><a href="students.html" data-i18n="nav.students">Students</a></li>
+                <li><a href="professors.html" data-i18n="nav.professors">Professors</a></li>
+                <li><a href="courses.html" data-i18n="nav.courses">Courses</a></li>
+                <li><a href="content.html" data-i18n="nav.content">Content</a></li>
+                <li><a href="schedule.html" data-i18n="nav.schedule">Schedule</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 data-i18n="hero.title">Welcome to LIU university</h1>
+            <p data-i18n="hero.subtitle">Your Gateway to Quality Education</p>
+            <button class="cta-button" id="getStarted" data-i18n="cta.getStarted">Get Started</button>
+        <!-- Chat widget -->
+        <script src="js/lang.js"></script>
+        </div>
+    </header>
+
+    <main>
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🎓</div>
+                <h3 data-i18n="feature.1.title">Expert Professors</h3>
+                <p data-i18n="feature.1.desc">Learn from highly qualified educators with years of experience</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📖</div>
+                <h3 data-i18n="feature.2.title">Comprehensive Courses</h3>
+                <p data-i18n="feature.2.desc">Explore a wide range of courses tailored to your needs</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 data-i18n="feature.3.title">Quality Education</h3>
+                <p data-i18n="feature.3.desc">Access high-quality educational content and resources</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <h2 data-i18n="about.title">About Our School</h2>
+            <p data-i18n="about.p1">LIU university is a leading educational institution dedicated to providing quality education to students worldwide. Our mission is to empower learners with knowledge and skills for success.</p>
+            <p data-i18n="about.p2">With a team of dedicated professors and comprehensive course offerings, we ensure that every student receives the best learning experience possible.</p>
+        </section>
+    </main>
+    <footer>
+       <p data-i18n="footer.copy" style="text-align:center;padding:1.5rem 0;color:#fff;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));margin-top:3rem;">&copy; 2025 LIU university</p>
+    </footer>
+    
+        <!-- Chat widget -->
+        <button class="chat-button" id="openChat" aria-label="Open chat">💬</button>
+        <div class="chat-modal" id="chatModal" aria-hidden="true">
+            <div class="chat-panel">
+                <button class="chat-close" id="closeChat" aria-label="Close chat">×</button>
+                <h3 data-i18n="chat.title">Contact LIU University</h3>
+                <form id="chatForm">
+                    <div class="form-group">
+                        <label for="chatName">Full name</label>
+                        <input id="chatName" name="chatName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="chatEmail">Email</label>
+                        <input id="chatEmail" name="chatEmail" type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="chatMessage">Message</label>
+                        <textarea id="chatMessage" name="chatMessage" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" data-i18n="chat.send">Send Message</button>
+                    <div id="chatStatus" style="display:none;margin-top:0.5rem;"></div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            // Get Started button: navigate to courses with a brief visual state
+            (function(){
+                const btn = document.getElementById('getStarted');
+                if (!btn) return;
+                btn.addEventListener('click', function(){
+                    // brief pressed state
+                    btn.disabled = true;
+                    const original = btn.textContent;
+                    btn.textContent = 'Opening courses...';
+                    // small delay for UX then navigate
+                    setTimeout(() => {
+                        window.location.href = 'courses.html';
+                    }, 400);
+                });
+            })();
+            // Chat widget behavior
+            (function(){
+                const openChat = document.getElementById('openChat');
+                const chatModal = document.getElementById('chatModal');
+                const closeChat = document.getElementById('closeChat');
+                const chatForm = document.getElementById('chatForm');
+                const chatStatus = document.getElementById('chatStatus');
+                if(!openChat || !chatModal) return;
+                openChat.addEventListener('click', () => {
+                    chatModal.style.display = 'flex';
+                    chatModal.setAttribute('aria-hidden','false');
+                    document.getElementById('chatName').focus();
+                });
+                closeChat.addEventListener('click', () => {
+                    chatModal.style.display = 'none';
+                    chatModal.setAttribute('aria-hidden','true');
+                });
+                window.addEventListener('click', (e) => {
+                    if (e.target === chatModal) {
+                        chatModal.style.display = 'none';
+                        chatModal.setAttribute('aria-hidden','true');
+                    }
+                });
+
+                chatForm.addEventListener('submit', function(e){
+                    e.preventDefault();
+                    chatStatus.style.display = 'none';
+                    const name = document.getElementById('chatName').value.trim();
+                    const email = document.getElementById('chatEmail').value.trim();
+                    const message = document.getElementById('chatMessage').value.trim();
+                    if(!name || !email || !message){
+                        chatStatus.style.display = 'block';
+                        chatStatus.style.color = '#dc2626';
+                        chatStatus.textContent = 'Please fill all fields.';
+                        return;
+                    }
+                    const to = 'admissions@liu.edu';
+                    const subject = encodeURIComponent('Website message from ' + name);
+                    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+                    // Open default mail client
+                    window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+                    chatStatus.style.display = 'block';
+                    chatStatus.style.color = '#065f46';
+                    chatStatus.textContent = 'Opened your email client to send the message. If that did not work, email admissions@liu.edu';
+                    chatForm.reset();
+                    setTimeout(()=>{ chatModal.style.display='none'; chatModal.setAttribute('aria-hidden','true'); }, 1200);
+                });
+            })();
+        </script>
+         
+</body>
+</html>
